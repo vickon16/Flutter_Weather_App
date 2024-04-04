@@ -18,8 +18,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
   late Future<Map<String, dynamic>> weatherCall;
 
   Future<Map<String, dynamic>> getCurrentWeather() async {
+    // check the env file for the api-key variable
     const url =
-        "https://api.openweathermap.org/data/2.5/forecast?lat=6.4579&lon=3.1580&appid=38f3f155e7232a47bc39160dd49ed0fb";
+        "https://api.openweathermap.org/data/2.5/forecast?lat=6.4579&lon=3.1580&appid=";
 
     try {
       final response = await http.get(Uri.parse(url));
